@@ -19,6 +19,14 @@ window.onload = () => {
   const result = document.getElementById("results-div");
   const input = document.getElementById("user-input");
 
+  document.getElementById("check-button").addEventListener("click", () => {
+    if (input.value === "") {
+      result.textContent = "Please provide a phone number";
+      return;
+    }
+    printResult(checkNumber(input.value), input.value, result);
+  });
+
   document.getElementById("clear-button").addEventListener("click", () => {
     clearNumber(result, input);
   });
